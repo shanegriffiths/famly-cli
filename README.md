@@ -25,7 +25,14 @@ anything on your account.
 
 ## Install
 
-Requires Python 3.11+.
+### Prerequisites
+
+- **Python 3.11+**
+- **[pipx](https://pipx.pypa.io)**, for the install command below
+- **git**, which pipx uses to fetch the repo
+
+Developed and tested on macOS. It should also run on Linux and Windows (it's
+plain cross-platform Python), but those aren't tested yet.
 
 ### Manual install
 
@@ -64,8 +71,10 @@ About the tool:
 - It is unofficial and READ-ONLY: it never changes, sends, or deletes anything
   in my Famly account. It only reads my data and saves files onto my computer.
 - Source code and full docs: https://github.com/shanegriffiths/famly-cli
-- It needs Python 3.11 or newer and is installed with a tool called "pipx".
-- It works on macOS, Windows, and Linux.
+- It needs Python 3.11 or newer, the "pipx" tool, and "git" (pipx uses git to
+  download it).
+- It is developed and tested on macOS. It should also work on Linux and
+  Windows, but that is not tested yet.
 
 How to work with me:
 - If you are able to run terminal commands yourself, do that and show me what
