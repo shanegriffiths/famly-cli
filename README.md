@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="docs/famly-logo.webp" alt="Famly" width="200">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/famly-logo-dark.png">
+    <img alt="Famly" src="docs/famly-logo-light.png" width="200">
+  </picture>
 </p>
 
 <h1 align="center">famly-cli</h1>
