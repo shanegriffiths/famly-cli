@@ -6,6 +6,9 @@
 </p>
 <p align="center">
   <a href="https://github.com/shanegriffiths/famly-cli/actions/workflows/ci.yml"><img src="https://github.com/shanegriffiths/famly-cli/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/shanegriffiths/famly-cli/releases/latest"><img src="https://img.shields.io/github/v/release/shanegriffiths/famly-cli" alt="Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/shanegriffiths/famly-cli" alt="License"></a>
+  <img src="https://img.shields.io/badge/python-3.11%2B-blue" alt="Python 3.11+">
 </p>
 
 A read-only command-line client for the [Famly](https://www.famly.co) childcare
