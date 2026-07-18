@@ -23,6 +23,23 @@ anything on your account.
 > credentials and may break without notice. Use it only with an account you
 > control, per Famly's Terms of Service, at your own risk.
 
+## Demo
+
+<p align="center"><img src="scripts/demo.gif" alt="famly-cli demo" width="820"></p>
+
+The tour above runs against a bundled mock server, so every name, message, and
+photo shown is fake. You can run the same thing yourself from a clone, with no
+Famly account:
+
+```bash
+python3 scripts/demo_server.py &            # fake backend on https://localhost:8765
+export FAMLY_BASE_URL=https://localhost:8765
+export SSL_CERT_FILE=scripts/.demo/cert.pem
+export FAMLY_ACCESS_TOKEN=demo
+famly children
+famly photos --incremental --gallery --out famly-demo
+```
+
 ## Install
 
 ### Prerequisites

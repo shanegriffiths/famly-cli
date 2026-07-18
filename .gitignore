@@ -18,3 +18,9 @@ photos/
 famly-export/
 # session scratch
 .superpowers/
+
+# demo server self-signed certs
+scripts/.demo/
+# demo command output (transient)
+famly-demo/
+famly-archive/
