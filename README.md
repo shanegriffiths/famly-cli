@@ -37,6 +37,15 @@ Not comfortable in a terminal? Paste the prompt below into an AI assistant
 walk you through installing, logging in, and downloading your photos, one step
 at a time. It never asks for your password in the chat.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/openai-logo-dark.svg">
+    <img alt="OpenAI" src="docs/openai-logo-light.svg" height="28">
+  </picture>
+  &nbsp;&nbsp;&nbsp;
+  <img alt="Claude" src="docs/claude-logo.svg" height="28">
+</p>
+
 <details>
 <summary><strong>Click to copy the setup prompt</strong></summary>
 
