@@ -20,6 +20,9 @@ classifiers = [
 ]
 dependencies = ["click>=8.1"]
 
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
 [project.urls]
 Homepage = "https://github.com/shanegriffiths/famly-cli"
 Repository = "https://github.com/shanegriffiths/famly-cli"

@@ -1,5 +1,7 @@
 # famly-cli
 
+[![CI](https://github.com/shanegriffiths/famly-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/shanegriffiths/famly-cli/actions/workflows/ci.yml)
+
 A read-only command-line client for the [Famly](https://www.famly.co)
 childcare/school app. It talks to the same API the Famly mobile/web app uses,
 and does two things well:
