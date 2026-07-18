@@ -23,8 +23,6 @@ anything on your account.
 > credentials and may break without notice. Use it only with an account you
 > control, per Famly's Terms of Service, at your own risk.
 
-## Demo
-
 <p align="center"><img src="scripts/demo.gif" alt="famly-cli demo" width="900"></p>
 
 The tour above runs against a bundled mock server, so every name, message, and
