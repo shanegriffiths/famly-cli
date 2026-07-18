@@ -1,6 +1,14 @@
-# famly-cli
+<p align="center">
+  <img src="docs/famly-logo.webp" alt="Famly" width="200">
+</p>
 
-[![CI](https://github.com/shanegriffiths/famly-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/shanegriffiths/famly-cli/actions/workflows/ci.yml)
+<h1 align="center">famly-cli</h1>
+
+<p align="center">
+  <a href="https://github.com/shanegriffiths/famly-cli/actions/workflows/ci.yml"><img src="https://github.com/shanegriffiths/famly-cli/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+</p>
+
+<p align="center"><em>An unofficial, read-only command-line client for Famly — not affiliated with Famly ApS.</em></p>
 
 A read-only command-line client for the [Famly](https://www.famly.co)
 childcare/school app. It talks to the same API the Famly mobile/web app uses,
