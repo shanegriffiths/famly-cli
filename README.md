@@ -9,10 +9,11 @@
 </p>
 
 A read-only command-line client for the [Famly](https://www.famly.co) childcare
-app. It archives every full-resolution photo of your child — across
-observations, newsfeed, messages, notes, tagged photos, and profile — and
-exposes Famly's read surface (children, feed, messages, events, observations) as
-JSON. It never writes, sends, or deletes anything on your account.
+app. It archives every full-resolution photo of your child from every source
+Famly exposes to a parent: observations, newsfeed, messages, notes, tagged
+photos, and profile. It also exposes Famly's read surface (children, feed,
+messages, events, observations) as JSON. It never writes, sends, or deletes
+anything on your account.
 
 > **Unofficial.** Not affiliated with or endorsed by Famly ApS; "Famly" is a
 > trademark of its owner. It uses Famly's private API with **your own**
@@ -33,8 +34,8 @@ pipx install git+https://github.com/shanegriffiths/famly-cli.git
 
 Not comfortable in a terminal? Paste the prompt below into an AI assistant
 (ChatGPT, Claude, Gemini, or a coding assistant like Claude Code) and it will
-walk you through install, login, and downloading your photos — one step at a
-time, and it never asks for your password in the chat.
+walk you through installing, logging in, and downloading your photos, one step
+at a time. It never asks for your password in the chat.
 
 <details>
 <summary><strong>Click to copy the setup prompt</strong></summary>
@@ -75,7 +76,7 @@ Please take me through this, step by step:
    pipx install git+https://github.com/shanegriffiths/famly-cli.git
 4. Confirm it worked: "famly --help" should list commands.
 5. Log me in with "famly login" (it will prompt for my Famly email and password
-   privately in the terminal). Then run "famly whoami" — I want to see
+   privately in the terminal). Then run "famly whoami" and check for
    {"authenticated": true}. If my account uses two-factor authentication,
    "famly login" will tell me; in that case explain how to copy an access token
    from a browser where I am logged into Famly (open the developer console and
@@ -87,10 +88,10 @@ Please take me through this, step by step:
    famly photos --incremental --gallery --out ~/Pictures/famly
    Then tell me where the photos and the "gallery.html" file are, and how to
    open the gallery in my web browser.
-8. Briefly mention the other things I can do — newest newsfeed posts
+8. Briefly mention the other things I can do: newest newsfeed posts
    ("famly feed"), unread messages ("famly messages --unread"), upcoming events
    ("famly events --from ... --to ..."), and a complete archive of everything
-   ("famly export") — and point me to the README for the details.
+   ("famly export"). Then point me to the README for the details.
 
 Remember: one step at a time, plain language, and stop to help me whenever
 something does not go as expected.
@@ -117,7 +118,7 @@ export FAMLY_EMAIL="you@example.com" FAMLY_PASSWORD="…"
 # or:  export FAMLY_ACCESS_TOKEN="…"       # a token you already have
 ```
 
-**Two-factor accounts:** password login can't complete on its own — copy a token
+**Two-factor accounts:** password login can't complete on its own. Copy a token
 from a logged-in browser (`localStorage['famly.accessToken']`) and set
 `FAMLY_ACCESS_TOKEN`.
 
