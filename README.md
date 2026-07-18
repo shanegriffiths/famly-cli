@@ -4,9 +4,6 @@
     <img alt="Famly" src="docs/famly-logo-light.png" width="200">
   </picture>
 </p>
-
-<h1 align="center">famly-cli</h1>
-
 <p align="center">
   <a href="https://github.com/shanegriffiths/famly-cli/actions/workflows/ci.yml"><img src="https://github.com/shanegriffiths/famly-cli/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
 </p>
