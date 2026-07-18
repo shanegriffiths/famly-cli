@@ -31,8 +31,9 @@ anything on your account.
 - **[pipx](https://pipx.pypa.io)**, for the install command below
 - **git**, which pipx uses to fetch the repo
 
-Developed and tested on macOS. It should also run on Linux and Windows (it's
-plain cross-platform Python), but those aren't tested yet.
+Developed and used day to day on macOS. CI runs the test suite and an install
+check on Linux, macOS, and Windows on every push, so all three are exercised,
+though the tool hasn't had heavy real-world use outside macOS yet.
 
 ### Manual install
 
