@@ -8,8 +8,6 @@
   <a href="https://github.com/shanegriffiths/famly-cli/actions/workflows/ci.yml"><img src="https://github.com/shanegriffiths/famly-cli/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
 </p>
 
-<p align="center"><em>An unofficial, read-only command-line client for Famly — not affiliated with Famly ApS.</em></p>
-
 A read-only command-line client for the [Famly](https://www.famly.co) childcare
 app. It archives every full-resolution photo of your child — across
 observations, newsfeed, messages, notes, tagged photos, and profile — and
