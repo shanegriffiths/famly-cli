@@ -39,18 +39,25 @@ CI runs the suite on Linux, macOS, and Windows across Python 3.11, 3.12, and
 OS, for every pull request.
 
 To try the tool in a clean Linux container (Docker or OrbStack), install the
-published version and run it:
+published version and run it. The slim image has no git, so add it first:
 
 ```bash
 docker run --rm -it python:3.11-slim bash -c \
-  "pip install git+https://github.com/shanegriffiths/famly-cli.git && famly --help"
+  "apt-get update -qq && apt-get install -y -qq git && pip install git+https://github.com/shanegriffiths/famly-cli.git && famly --help"
 ```
 
-Or mount your local working copy to test uncommitted changes:
+To test your local working copy instead (no git needed, since pip installs from
+the mounted directory):
 
 ```bash
 docker run --rm -it -v "$PWD":/src -w /src python:3.11-slim bash -c \
   "pip install . && famly --help"
+```
+
+For an interactive shell to poke around, drop the `bash -c "..."`:
+
+```bash
+docker run --rm -it python:3.11-slim bash
 ```
 
 ## Test fixtures
