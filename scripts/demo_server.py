@@ -140,8 +140,9 @@ def placeholder_png(name: str, w: int = 480, h: int = 480) -> bytes:
 # --- HTTP handler ------------------------------------------------------------
 
 class Handler(BaseHTTPRequestHandler):
-    def log_message(self, *a):  # keep the demo terminal clean
-        pass
+    def log_message(self, fmt, *args):  # quiet unless FAMLY_DEMO_LOG is set
+        if os.environ.get("FAMLY_DEMO_LOG"):
+            super().log_message(fmt, *args)
 
     def _send(self, body: bytes, ctype: str, status: int = 200):
         self.send_response(status)

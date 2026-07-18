@@ -25,7 +25,7 @@ anything on your account.
 
 ## Demo
 
-<p align="center"><img src="scripts/demo.gif" alt="famly-cli demo" width="820"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/shanegriffiths/famly-cli/main/scripts/demo.gif" alt="famly-cli demo" width="900"></p>
 
 The tour above runs against a bundled mock server, so every name, message, and
 photo shown is fake. You can run the same thing yourself from a clone, with no

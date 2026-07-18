@@ -24,3 +24,5 @@ scripts/.demo/
 # demo command output (transient)
 famly-demo/
 famly-archive/
+# transient render artifact (mp4 used only for frame verification)
+scripts/demo.mp4
