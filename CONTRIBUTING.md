@@ -7,11 +7,11 @@ not affiliated with or endorsed by Famly ApS.
 ## Ground rules
 
 - **Read-only by design.** The CLI never writes, sends, or deletes anything on
-  Famly's side. Please don't add commands that mutate a Famly account — that is
+  Famly's side. Please don't add commands that mutate a Famly account. That is
   intentionally out of scope.
 - **Never commit personal data.** This tool handles a child's photos and
-  messages. Downloaded media, `token.json`, and `_manifest.json` are git-ignored
-  — keep it that way. The JSON test fixtures are **scrubbed** of all real data
+  messages. Downloaded media, `token.json`, and `_manifest.json` are git-ignored,
+  so keep it that way. The JSON test fixtures are **scrubbed** of all real data
   (see below); never replace them with an unscrubbed capture from a live account.
 
 ## Development setup
@@ -31,10 +31,27 @@ python3 -m venv .venv
 .venv/bin/python -m pytest -q
 ```
 
-The suite is fully offline and fixture-driven — no network, no credentials.
+The suite is fully offline and fixture-driven (no network, no credentials).
 A single live-smoke test (`tests/test_live_smoke.py`) is skipped unless you set
 `FAMLY_EMAIL` and `FAMLY_PASSWORD`; only ever run it against your own account.
-CI runs the same suite on Python 3.11, 3.12, and 3.13 for every pull request.
+CI runs the suite on Linux, macOS, and Windows across Python 3.11, 3.12, and
+3.13, plus an install smoke test (`pip install .` then `famly --help`) on each
+OS, for every pull request.
+
+To try the tool in a clean Linux container (Docker or OrbStack), install the
+published version and run it:
+
+```bash
+docker run --rm -it python:3.11-slim bash -c \
+  "pip install git+https://github.com/shanegriffiths/famly-cli.git && famly --help"
+```
+
+Or mount your local working copy to test uncommitted changes:
+
+```bash
+docker run --rm -it -v "$PWD":/src -w /src python:3.11-slim bash -c \
+  "pip install . && famly --help"
+```
 
 ## Test fixtures
 
@@ -49,7 +66,7 @@ same way and keep that guard passing.
 
 ## Making changes
 
-- Match the surrounding code style — it is compact and deliberately
+- Match the surrounding code style. It is compact and deliberately
   dependency-light.
 - Add or update tests for any behaviour change, and keep them offline.
 - Treat the Famly API response as **untrusted input**. Anything that turns an

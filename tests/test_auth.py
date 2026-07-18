@@ -1,3 +1,5 @@
+import os
+
 import pytest
 from pathlib import Path
 from famly.client import ApiClient, ApiError
@@ -15,7 +17,8 @@ def test_login_extracts_access_token():
 def test_token_store_roundtrip(tmp_path):
     s = TokenStore(tmp_path); assert s.load() is None
     s.save("TOK"); assert s.load() == "TOK"
-    assert (tmp_path / "token.json").stat().st_mode & 0o777 == 0o600
+    if os.name == "posix":  # 0o600 file mode is POSIX-only; Windows models perms differently
+        assert (tmp_path / "token.json").stat().st_mode & 0o777 == 0o600
 
 def test_authenticated_client_uses_cached_token(tmp_path):
     TokenStore(tmp_path).save("CACHED")
