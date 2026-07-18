@@ -261,14 +261,14 @@ def gallery(ctx, directory):
 
     manifest = Path(directory) / "_manifest.json"
     try:
-        recs = json.loads(manifest.read_text())
+        recs = json.loads(manifest.read_text(encoding="utf-8"))
     except FileNotFoundError:
         raise click.ClickException(
             f"No manifest at {manifest} — run `famly photos --out {directory}` first.")
     except (OSError, ValueError) as e:
         raise click.ClickException(f"Could not read {manifest}: {e}")
     status("Rendering gallery.html…", ctx.obj["quiet"])
-    (Path(directory) / "gallery.html").write_text(render(recs))
+    (Path(directory) / "gallery.html").write_text(render(recs), encoding="utf-8")
     click.echo(f"Wrote {directory}/gallery.html")
 
 

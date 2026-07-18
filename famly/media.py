@@ -40,8 +40,8 @@ def download(client, ref, out_dir: Path, index: int) -> Path:
 
 def load_manifest(out_dir: Path):
     f = Path(out_dir) / "_manifest.json"
-    return json.loads(f.read_text()) if f.exists() else []
+    return json.loads(f.read_text(encoding="utf-8")) if f.exists() else []
 
 
 def write_manifest(out_dir: Path, records):
-    (Path(out_dir) / "_manifest.json").write_text(json.dumps(records, indent=2))
+    (Path(out_dir) / "_manifest.json").write_text(json.dumps(records, indent=2), encoding="utf-8")

@@ -94,7 +94,7 @@ def download_refs(client, refs, out_dir, *, incremental, make_gallery, quiet=Fal
         write_manifest(out_dir, records)
     if make_gallery:
         status("Rendering gallery.html…", quiet)
-        (out_dir / "gallery.html").write_text(render(records))
+        (out_dir / "gallery.html").write_text(render(records), encoding="utf-8")
     status(f"Done: {done} downloaded, {failed} failed, {len(refs)} total refs → {out_dir}", quiet)
     return {"downloaded": done, "failed": failed, "total_refs": len(refs), "out_dir": str(out_dir)}
 

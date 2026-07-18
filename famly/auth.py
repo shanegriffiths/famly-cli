@@ -4,7 +4,7 @@ from importlib.resources import files
 from .client import ApiClient, ApiError
 
 def _query(name: str) -> str:
-    return files("famly.graphql").joinpath(f"{name}.graphql").read_text()
+    return files("famly.graphql").joinpath(f"{name}.graphql").read_text(encoding="utf-8")
 
 def login(client: ApiClient, email: str, password: str, device_id: str) -> str:
     data = client.graphql("Authenticate",
@@ -26,7 +26,7 @@ class TokenStore:
         self.path = Path(config_dir) / "token.json"
     def load_record(self) -> dict:
         try:
-            data = json.loads(self.path.read_text())
+            data = json.loads(self.path.read_text(encoding="utf-8"))
             return data if isinstance(data, dict) else {}
         except (OSError, ValueError):
             return {}
@@ -37,7 +37,7 @@ class TokenStore:
         record = {"access_token": token} | ({"email": email} if email else {})
         # Owner-only from the moment of creation — never world-readable, even briefly.
         fd = os.open(self.path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
-        with os.fdopen(fd, "w") as f:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
             f.write(json.dumps(record))
         os.chmod(self.path, 0o600)  # pre-existing files keep tight perms too
 

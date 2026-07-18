@@ -30,8 +30,8 @@ def child_slug(name, child_id, taken):
 
 def _write_json(path, obj):
     path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(json.dumps(to_jsonable(obj), indent=2, ensure_ascii=False))
+    tmp = path.with_suffix(path.suffix + ".tmp")  # write utf-8 below; captions/names may be non-ASCII
+    tmp.write_text(json.dumps(to_jsonable(obj), indent=2, ensure_ascii=False), encoding="utf-8")
     tmp.replace(path)  # atomic: a crash mid-write can't destroy the previous good copy
 
 

@@ -23,9 +23,9 @@ class Config:
         self.config_dir.mkdir(parents=True, exist_ok=True)
         f = self.config_dir / "device_id"
         if f.exists():
-            return f.read_text().strip()
+            return f.read_text(encoding="utf-8").strip()
         did = str(uuid.uuid4())
-        f.write_text(did)
+        f.write_text(did, encoding="utf-8")
         return did
 
     def _op_lookup(self) -> Credentials | None:
