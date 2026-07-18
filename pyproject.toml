@@ -1,0 +1,39 @@
+[project]
+name = "famly-cli"
+version = "0.1.0"
+description = "Read-only command-line client for the Famly childcare app: archive full-resolution photos and export account data as JSON."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Shane Griffiths" }]
+keywords = ["famly", "childcare", "nursery", "cli", "photos", "archive"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Utilities",
+]
+dependencies = ["click>=8.1"]
+
+[project.urls]
+Homepage = "https://github.com/shanegriffiths/famly-cli"
+Repository = "https://github.com/shanegriffiths/famly-cli"
+Issues = "https://github.com/shanegriffiths/famly-cli/issues"
+
+[project.scripts]
+famly = "famly.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["famly*"]
+
+[tool.setuptools.package-data]
+"famly.graphql" = ["*.graphql"]

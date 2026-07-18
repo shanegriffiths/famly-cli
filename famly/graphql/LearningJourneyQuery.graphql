@@ -1,0 +1,14 @@
+query LearningJourneyQuery($childId: ChildId!, $variants: [ObservationVariant!], $next: ObservationCursor, $first: Int!) {
+  childDevelopment {
+    observations(first: $first, childIds: [$childId], statuses: [SENT], variants: $variants, after: $next) {
+      next
+      results {
+        id variant status { createdAt } createdBy { name { fullName } } remark { body }
+        images { id width height url }
+        videos { ... on TranscodedVideo { id videoUrl width height } }
+        files { id name url }
+        children { id name }
+      }
+    }
+  }
+}

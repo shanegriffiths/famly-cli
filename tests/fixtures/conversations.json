@@ -1,0 +1,39 @@
+{
+  "list": {
+    "conversations": [
+      {
+        "conversationId": "c1",
+        "title": "Nursery 2",
+        "archived": false,
+        "participants": [
+          {
+            "title": "Nursery 2"
+          }
+        ]
+      }
+    ]
+  },
+  "detail": {
+    "conversationId": "c1",
+    "title": "Nursery 2",
+    "archived": false,
+    "participants": [
+      {
+        "title": "Nursery 2"
+      }
+    ],
+    "cursor": null,
+    "messages": [
+      {
+        "messageId": "m1",
+        "createdAt": "2026-06-01T09:00:00+00:00",
+        "author": {
+          "title": "Test Teacher"
+        },
+        "body": "Reminder: World Book Day",
+        "images": [],
+        "files": []
+      }
+    ]
+  }
+}

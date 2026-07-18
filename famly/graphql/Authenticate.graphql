@@ -1,0 +1,36 @@
+mutation Authenticate($email: EmailAddress!, $password: Password!, $deviceId: DeviceId, $legacy: Boolean) {
+    me {
+        authenticateWithPassword(
+            email: $email
+            password: $password
+            deviceId: $deviceId
+            legacy: $legacy
+        ) {
+            ...AuthenticationResult
+            __typename
+        }
+        __typename
+    }
+}
+
+fragment AuthenticationResult on AuthenticationResult {
+    status
+    __typename
+    ... on AuthenticationFailed {
+        status
+        errorDetails
+        errorTitle
+        __typename
+    }
+    ... on AuthenticationSucceeded {
+        accessToken
+        deviceId
+        __typename
+    }
+    ... on AuthenticationChallenged {
+        loginId
+        deviceId
+        expiresAt
+        __typename
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "name": {
+    "fullName": "Test Parent"
+  },
+  "roles2": [
+    {
+      "targetId": "inst-9",
+      "targetType": "Famly.Daycare:Institution",
+      "title": "Some Nursery"
+    },
+    {
+      "targetId": "child-1",
+      "targetType": "Famly.Daycare:Child",
+      "title": "Test Child",
+      "subtitle": "Test Nursery"
+    }
+  ],
+  "roles": []
+}

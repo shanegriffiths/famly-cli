@@ -1,0 +1,22 @@
+query GetChildNotes($childId: ChildId!, $cursor: ChildNoteCursor, $limit: Int!, $parentVisible: Boolean, $safeguardingConcern: Boolean, $sensitive: Boolean, $noteTypes: [ChildNoteType!]) {
+  childNotes(
+    childIds: [$childId]
+    cursor: $cursor
+    limit: $limit
+    parentVisible: $parentVisible
+    safeguardingConcern: $safeguardingConcern
+    sensitive: $sensitive
+    noteTypes: $noteTypes
+  ) {
+    next
+    result {
+      noteId
+      noteType
+      createdAt
+      createdBy { name { fullName } }
+      text
+      images { id width height secret { prefix path key expires crop } }
+      files { id name url }
+    }
+  }
+}

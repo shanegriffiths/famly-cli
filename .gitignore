@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.DS_Store
+# never commit secrets or downloaded media (un-anchored: ignore anywhere in the tree)
+token.json
+*.token
+pictures/
+# default --out for `famly photos`, plus common alternatives
+famly-photos/
+photos/
+# default --out for `famly export`
+famly-export/
+# session scratch
+.superpowers/
